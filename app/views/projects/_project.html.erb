@@ -1,0 +1,27 @@
+<div class="sub-container">
+  <p>
+    <strong>Domain:</strong>
+    <%= project.domain %>
+  </p>
+
+  <p>
+    <strong>Duration:</strong>
+    <%= project.duration %> months
+  </p>
+
+  <p>
+    <strong>Responsibilities:</strong>
+    <ul>
+      <% project.responsibilities.split("\n").each do |resp| %>
+        <li>
+          <%= resp %>
+        </li>
+      <% end %>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Designation:</strong>
+    <%= project.title %>
+  </p>
+</div>

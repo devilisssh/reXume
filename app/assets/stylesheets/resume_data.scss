@@ -1,0 +1,35 @@
+// Place all the styles related to the resume_data controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-color: #6E215d !important;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0px auto;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.logo {
+  float:right;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  span {
+    font-size: 14px;
+    font-weight: 100;
+  }
+}
+
+.sub-container {
+  background-color: #eee;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

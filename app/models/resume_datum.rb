@@ -5,5 +5,5 @@ class ResumeDatum < ActiveRecord::Base
   has_many :colleges
   has_one :address, as: :addressable
 
-  accepts_nested_attributes_for :skills, :projects, :colleges, :address, allow_destroy: true
+  accepts_nested_attributes_for :skills, :projects, :colleges, :address, allow_destroy: true, reject_if: lambda {|attr| attr.all? { |e| e.blank? }}
 end

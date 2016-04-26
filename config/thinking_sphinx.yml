@@ -1,0 +1,4 @@
+development:
+  dict: keywords
+  enable_star: true
+  min_infix_len: 1

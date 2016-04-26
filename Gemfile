@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '3.5.6'
 gem 'nested_form_fields', '0.7.6'
 gem 'thinking-sphinx', '3.1.4'
+gem 'wicked_pdf', '1.0.6'
+gem 'wkhtmltopdf-binary'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

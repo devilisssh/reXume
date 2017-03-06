@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   validates :first_name, :last_name, presence: true
 
+  after_save ThinkingSphinx::RealTime.callback_for(:user)
+
   def name
     "#{first_name} #{last_name}"
   end

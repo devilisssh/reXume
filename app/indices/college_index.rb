@@ -1,4 +1,4 @@
-ThinkingSphinx::Index.define :college, with: :active_record do
+ThinkingSphinx::Index.define :college, with: :real_time do
   indexes :name
   indexes degree
   indexes university

@@ -1,4 +1,4 @@
-ThinkingSphinx::Index.define :project, with: :active_record do
+ThinkingSphinx::Index.define :project, with: :real_time do
   indexes title
   indexes domain
   indexes :name

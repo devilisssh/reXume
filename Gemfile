@@ -32,7 +32,7 @@ gem 'wkhtmltopdf-binary'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-gem 'unicorn', '5.2.0'
+gem 'passenger'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -50,5 +50,6 @@ group :development do
   gem 'spring'
   gem 'capistrano', '~> 3.6'
   gem 'capistrano-rails', '~> 1.2'
+  gem 'capistrano-passenger'
 end
 

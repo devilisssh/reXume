@@ -3,5 +3,11 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_one :resume, class_name: "ResumeDatum"
+  has_one :resume
+
+  validates :first_name, :last_name, presence: true
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end

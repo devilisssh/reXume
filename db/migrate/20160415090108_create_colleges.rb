@@ -5,7 +5,7 @@ class CreateColleges < ActiveRecord::Migration
       t.string :degree
       t.integer :year_of_graduation
       t.string :university
-      t.references :resume_datum
+      t.references :resume
 
       t.timestamps null: false
     end

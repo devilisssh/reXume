@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ReXume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= wicked_pdf_stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= wicked_pdf_javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </head>
+  <body>
+    <div class="container">
+      <%= render 'shared/header' %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

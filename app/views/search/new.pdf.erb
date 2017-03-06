@@ -1,0 +1,14 @@
+<div class="search">
+  <i> </i>
+  <div class="s-bar">
+    <%= form_tag('/search/results', method: 'get') do %>
+      <%= text_field_tag "query", nil, :placeholder => "Search" %>
+      <%= submit_tag "Search" %>
+    <% end %>
+  </div>
+  <a href="screenshot">ScreenShot</a>
+</div>
+
+</div><!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--Google Fonts-->

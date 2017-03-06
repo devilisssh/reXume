@@ -1,0 +1,54 @@
+@import "materialize/components/color";
+$primary-color: #6C1D5F;
+$secondary-color: #6C1D5F;
+@import 'materialize';
+@import "materialize/extras/nouislider";
+@import "material_icons";
+
+body {
+  font-size: 18px;
+}
+
+nav .brand-logo {
+  padding-left: 0.4em;
+}
+
+.search {
+  padding-top: 2em;
+}
+
+.col .btn {
+  width: 100%;
+}
+
+.resume-container {
+  .row {
+    margin-bottom: 0px;
+  }
+  padding: 0.5em;
+  .heads {
+    @extend .col, .s12, .grey, .lighten-2, .valign-wrapper;
+    min-height: 2em !important;
+  }
+  ul.bullets {
+    padding-left: 3em;
+    li {
+      list-style-type: initial;
+    }
+  }
+  .project {
+    .duration {
+      @extend .col, .s6, .right-align;
+      outline: 1px solid black;
+    }
+    .domain {
+      @extend .col, .s6;
+      outline: 1px solid black;
+    }
+    .more-info {
+      @extend .s12;
+      line-height: 2;
+      outline: 1px solid black; 
+    }
+  }
+}

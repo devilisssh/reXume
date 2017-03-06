@@ -1,17 +1,8 @@
-<div class="sub-container">
-  <p>
-    <%= @address.line1 %>,
-  </p>
-
-  <p>
-    <%= @address.line2 %>,
-  </p>
-
-  <p>
-    <%= @address.city %>, <%= @address.state %>
-  </p>
-
-  <p>
-    <%= @address.country %>
-  </p>
+<div class="row address">
+  <div class="col"></div>
+    <%= @address.line1 %>,<br />
+    <%= "#{@address.line2}," if @address.line2 %><br />
+    <%= @address.city %>, <%= @address.state %><br />
+    <%= @address.country %><br />
+  </div>
 </div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @file_name %></title>
+  <%= wicked_pdf_stylesheet_link_tag    'application' %>
+  <%= wicked_pdf_javascript_include_tag 'application' %>
+</head>
+<body style="font-family: Helvetica; font-size: 13px;">
+  <div class="container">
+    <div class="resume-container col s12">
+      <div class="logo right">
+        <img src='<%= wicked_pdf_asset_path("xebiaLogo.png") %>'></img>
+      </div>
+      <br />
+      <br />
+      <br />
+      <p id="notice"><%= notice %></p>
+
+      <h3 class="center"><%= @user.name %></h3>
+      <h6 class="center"><%= @user.email %></h6>
+      <h6 class="center"><%= @user.phone %></h6>
+      <br />
+
+      <div class="row">
+        <h5 class="heads">Summary</h5>
+      </div>
+      <div class="row">
+        <ul class="col bullets">
+          <% @resume.summary.split("\n").each do |line| %>
+          <li>
+            <%= line %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="row">
+        <h5 class="heads">Technical Skills</h5>
+      </div>
+      <div class="sub-container">
+        <table>
+          <%= render partial: 'skills/skill', collection: @skills %>
+        </table>
+      </div>
+
+      <div class="row">
+        <h5 class="heads">Project Summary</h5>
+      </div>
+
+      <%= render partial: 'projects/project', collection: @projects %>
+
+      <div class="row">
+        <h5 class="heads">Education</h5>
+      </div>
+
+      <%= render partial: 'colleges/college', collection: @colleges %>
+
+    </div>
+  </div>
+</body>
+</html>

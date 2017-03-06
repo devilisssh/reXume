@@ -1,3 +1,3 @@
 ThinkingSphinx::Index.define :skill, with: :active_record do
-  indexes name, sortable: true
+  indexes tools_used
 end

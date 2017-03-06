@@ -3,10 +3,12 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
       t.string :name
       t.text :responsibilities
+      t.text :description
+      t.text :tech_used
       t.string :domain
       t.integer :duration
       t.string :title
-      t.references :resume_datum
+      t.references :resume
 
       t.timestamps null: false
     end

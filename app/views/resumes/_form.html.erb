@@ -1,0 +1,58 @@
+<div class="row">
+  <%= form_for(@resume, html: { class: 'col s12' }) do |f| %>
+    <% if @resume.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
+
+        <ul>
+        <% @resume.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <div class="field">
+      <%= f.label :summary %><br>
+      <%= f.text_area :summary %>
+    </div>
+
+    <h3>
+      Skills
+    </h3>
+    <%= f.nested_fields_for :skills do |s| %>
+      <%= render partial: 'skills/form', locals: { f: s} %>
+      <%= s.remove_nested_fields_link "Remove Skill" %>
+    <% end %>
+    <%= f.add_nested_fields_link :skills %>
+
+    <h3>
+      Projects
+    </h3>
+    <%= f.nested_fields_for :projects do |p| %>
+      <%= render partial: 'projects/form', locals: { f: p} %>
+      <%= p.remove_nested_fields_link "Remove Project" %>
+    <% end %>
+    <%= f.add_nested_fields_link :projects %>
+
+    <h3>
+      Education
+    </h3>
+    <%= f.nested_fields_for :colleges do |c| %>
+      <%= render partial: 'colleges/form', locals: { f: c} %>
+      <%= c.remove_nested_fields_link "Remove College" %>
+    <% end %>
+    <%= f.add_nested_fields_link :colleges %>
+
+    <h3>
+      Address
+    </h3>
+    <%= f.fields_for :address do |a| %>
+      <%= render partial: 'addresses/form', locals: { f: a} %>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

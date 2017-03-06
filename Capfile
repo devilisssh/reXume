@@ -17,6 +17,7 @@ install_plugin Capistrano::SCM::Git
 
 require 'capistrano/rails'
 require 'thinking_sphinx/capistrano'
+require 'capistrano/passenger'
 
 # Include tasks from other gems included in your Gemfile
 #

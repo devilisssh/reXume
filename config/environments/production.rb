@@ -1,6 +1,16 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.action_mailer.default_url_options = { :host => "ec2-52-25-37-141.us-west-2.compute.amazonaws.com" }
+  config.action_mailer.smtp_settings = {
+    :address => "email-smtp.us-west-2.amazonaws.com",
+    :port => 587,
+    :user_name => 'AKIAIM7QKXYK3CRLXINQ', #Your SMTP user
+    :password => 'ApDWXjBSVwXQZG+QSoWEB5sr2uQrvZpT0okA8J2N/9lc', #Your SMTP password
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+  config.action_mailer.perform_deliveries = true
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -22,7 +32,8 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.serve_static_files = true
+  # config.serve_static_files = true
+  config.public_file_server.enabled = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -62,7 +73,7 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

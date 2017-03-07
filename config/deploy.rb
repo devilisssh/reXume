@@ -33,6 +33,17 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-set :passenger_restart_with_touch, false
-set :passenger_restart_with_sudo, true
 set :passenger_in_gemfile, true
+
+namespace :deploy do
+  task :start, :roles => :app do
+    run "cd #{current_path} && sudo bundle exec passenger start -p #{port} -e #{stage} -d"
+  end
+
+  task :stop, :roles => :app do
+    run "cd #{current_path} && sudo bundle exec passenger stop -p #{port}"
+  end
+end
+
+after "deploy:symlink:release", "deploy:stop"
+after "deploy:stop", "deploy:start"

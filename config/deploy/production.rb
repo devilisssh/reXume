@@ -22,6 +22,7 @@ role :web, %w{ubuntu@ec2-52-25-37-141.us-west-2.compute.amazonaws.com}
 # role :db,  %w{deploy@example.com}
 
 set :keep_assets, 2
+set :port, 80
 set :migration_role, :app
 
 # Configuration

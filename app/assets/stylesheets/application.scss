@@ -21,6 +21,11 @@ nav .brand-logo {
   width: 100%;
 }
 
+.error-messages {
+  @extend .red-text, .red, .lighten-5;
+  padding-left: 0.5em;
+}
+
 .resume-container {
   .row {
     margin-bottom: 0px;

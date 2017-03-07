@@ -36,12 +36,16 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 set :passenger_in_gemfile, true
 
 namespace :deploy do
-  task :start, :roles => :app do
-    run "cd #{current_path} && sudo bundle exec passenger start -p #{port} -e #{stage} -d"
+  task :start do
+    on roles(:all) do
+      execute "cd #{current_path} && sudo bundle exec passenger start -p #{fetch(:port, 80)} -e #{fetch(:stage, 'production')} -d"
+    end
   end
 
-  task :stop, :roles => :app do
-    run "cd #{current_path} && sudo bundle exec passenger stop -p #{port}"
+  task :stop do
+    on roles(:all) do
+      execute "cd #{current_path} && sudo bundle exec passenger stop -p #{fetch(:port, 80)}"
+    end
   end
 end
 

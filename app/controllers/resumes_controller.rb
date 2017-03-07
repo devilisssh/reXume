@@ -1,12 +1,12 @@
 class ResumesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_resume, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index]
 
   # GET /resumes
   # GET /resumes.json
-  def index
-    @resumes = Resume.all
-  end
+  # def index
+  #   @resumes = Resume.all
+  # end
 
   # GET /resumes/1
   # GET /resumes/1.json
@@ -78,7 +78,9 @@ class ResumesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_resume
-      @resume = Resume.find(params[:id])
+      unless @resume = current_user.resume
+        redirect_to new_resume_path and return
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   get 'search/results'
   devise_for :users
   resources :users
-  resources :resumes
+  get '/resume', to: 'resumes#show'
+  resources :resumes, except: [:index, :show]
 end

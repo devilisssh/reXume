@@ -215,6 +215,7 @@ DEPENDENCIES
   capistrano (~> 3.6)
   capistrano-passenger
   capistrano-rails (~> 1.2)
+  coffee-rails (= 4.2.1)
   devise (= 4.2.0)
   jbuilder (= 2.6.3)
   jquery-rails (= 4.2.2)

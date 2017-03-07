@@ -14,5 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require nested_form_fields
-//= require materialize-sprockets
+//= require materialize/initial
+//= require materialize/jquery.easing.1.3
+//= require materialize/animation
+//= require materialize/global
+//= require materialize/dropdown
+//= require materialize/tooltip
+//= require materialize/waves
+//= require materialize/scrollspy
+//= require materialize/forms
+//= require materialize/cards
+//= require materialize/buttons
+//= require materialize/transitions
 //= require_tree .

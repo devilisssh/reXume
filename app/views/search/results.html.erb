@@ -4,7 +4,7 @@
       <div class="card transparent">
         <div class="card-content">
           <span class="card-title"><%= user.name %></span>
-          <p><%= user.resume.summary %></p>
+          <p><%= user.resume.try(:summary) %></p>
         </div>
         <div class="card-action">
           <%= link_to 'Download Resume', resume_path(user.resume, format: 'pdf')%>

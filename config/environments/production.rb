@@ -3,10 +3,10 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { :host => "ec2-52-25-37-141.us-west-2.compute.amazonaws.com" }
   config.action_mailer.smtp_settings = {
-    :address => "email-smtp.us-west-2.amazonaws.com",
+    :address => "smtp.postmarkapp.com",
     :port => 587,
-    :user_name => 'AKIAIM7QKXYK3CRLXINQ', #Your SMTP user
-    :password => 'ApDWXjBSVwXQZG+QSoWEB5sr2uQrvZpT0okA8J2N/9lc', #Your SMTP password
+    :user_name => 'baa67d64-1e80-4246-a45b-826c48ecad91', #Your SMTP user
+    :password => 'baa67d64-1e80-4246-a45b-826c48ecad91', #Your SMTP password
     :authentication => :plain,
     :enable_starttls_auto => true
   }

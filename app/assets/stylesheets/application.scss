@@ -21,9 +21,16 @@ nav .brand-logo {
   width: 100%;
 }
 
-.error-messages {
-  @extend .red-text, .red, .lighten-5;
-  padding-left: 0.5em;
+.error-message {
+  @extend .red-text, .red, .lighten-5, .card;
+}
+
+.alert-message {
+  @extend .orange-text, .orange, .lighten-5, .card;
+}
+
+.notice-message {
+  @extend .green-text, .green, .lighten-5, .card;
 }
 
 .resume-container {
